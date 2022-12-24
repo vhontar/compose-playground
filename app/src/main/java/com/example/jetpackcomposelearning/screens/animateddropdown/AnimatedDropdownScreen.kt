@@ -1,6 +1,5 @@
 package com.example.jetpackcomposelearning.screens.animateddropdown
 
-import android.widget.Space
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background

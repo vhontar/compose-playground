@@ -75,7 +75,7 @@ fun ProfileHeader(progress: Float) {
                 .layoutId("profile_pic")
         )
         Text(
-            text = "Vladyslav Hontar",
+            text = "Big tasty",
             fontSize = 24.sp,
             modifier = Modifier.layoutId("username"),
             color = color
