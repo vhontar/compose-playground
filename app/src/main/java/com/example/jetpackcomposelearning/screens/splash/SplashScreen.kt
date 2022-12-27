@@ -37,8 +37,9 @@ fun SplashScreen(navController: NavController) {
             )
         )
 
-        delay(1000)
+        delay(300)
         navController.navigate(Screen.MainScreen.route)
+//        navController.navigate(Screen.ClockScreen.route)
     }
 
     Box(

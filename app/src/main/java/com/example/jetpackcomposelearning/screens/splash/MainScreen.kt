@@ -15,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -24,7 +25,7 @@ import com.example.jetpackcomposelearning.navigation.allScreens
 @Composable
 fun MainScreen(navController: NavController) {
     LazyVerticalGrid(
-        cells = GridCells.Adaptive(150.dp),
+        cells = GridCells.Adaptive(90.dp),
         content = {
             items(allScreens.size) { i ->
                 val screen = allScreens[i]
@@ -39,8 +40,12 @@ fun MainScreen(navController: NavController) {
                 ) {
                     Text(
                         text = screen.title,
-                        fontSize = 20.sp,
-                        color = Color.White
+                        fontSize = 12.sp,
+                        color = Color.White,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier
+                            .align(Alignment.Center)
+                            .padding(10.dp)
                     )
                 }
             }

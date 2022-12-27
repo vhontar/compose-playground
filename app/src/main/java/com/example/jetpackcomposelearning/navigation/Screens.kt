@@ -4,6 +4,8 @@ import androidx.compose.runtime.Composable
 import com.example.jetpackcomposelearning.screens.animateddropdown.AnimatedDropdownScreen
 import com.example.jetpackcomposelearning.screens.bottomnavigation.BottomNavigationScreen
 import com.example.jetpackcomposelearning.screens.bottomsheet.BottomSheetScreen
+import com.example.jetpackcomposelearning.screens.clock.ClockScreen
+import com.example.jetpackcomposelearning.screens.incomeexpenses.IncomeExpensesScreen
 import com.example.jetpackcomposelearning.screens.instagram.InstagramScreen
 import com.example.jetpackcomposelearning.screens.meditation.MeditationScreen
 import com.example.jetpackcomposelearning.screens.motionlayout.MotionLayoutScreen
@@ -18,6 +20,7 @@ val allScreens = listOf(
     Screen.InstagramScreen,
     Screen.MeditationScreen,
     Screen.ScaleScreen,
+    Screen.ClockScreen,
     Screen.SoundBarScreen,
     Screen.TimerScreen,
     Screen.ParallaxScrollViewScreen,
@@ -26,7 +29,8 @@ val allScreens = listOf(
     Screen.BottomSheetScreen,
     Screen.CustomPaginationScreen,
     Screen.NavigationDrawerScreen,
-    Screen.MotionLayoutScreen
+    Screen.MotionLayoutScreen,
+    Screen.ExpensesScreen
 )
 
 sealed class Screen(
@@ -38,69 +42,94 @@ sealed class Screen(
         route = "splash_screen",
         title = "Splash screen"
     )
+
     object MainScreen : Screen(
         route = "main_screen",
         title = "Main Screen"
     )
+
     object AnimatedDropdownScreen : Screen(
         route = "animated_dropdown_screen",
         title = "Animated dropdown",
         content = { AnimatedDropdownScreen() }
     )
+
     object BottomNavigationScreen : Screen(
         route = "bottom_navigation_screen",
         title = "Bottom Navigation",
         content = { BottomNavigationScreen() }
     )
+
     object BottomSheetScreen : Screen(
         route = "bottom_sheet_screen",
         title = "Bottom sheet",
         content = { BottomSheetScreen() }
     )
+
     object InstagramScreen : Screen(
         route = "instagram_screen",
         title = "Instagram App",
         content = { InstagramScreen() }
     )
+
     object MeditationScreen : Screen(
         route = "meditation_screen",
         title = "Meditation App",
         content = { MeditationScreen() }
     )
+
     object CustomPaginationScreen : Screen(
         route = "custom_pagination_screen",
         title = "Custom pagination",
         content = { PaginationScreen() }
     )
+
     object ParallaxScrollViewScreen : Screen(
         route = "parallax_scroll_view_screen",
         title = "Parallax scroll view",
         content = { ParallaxScrollScreen() }
     )
+
     object ScaleScreen : Screen(
         route = "scale_screen_screen",
         title = "Scale",
         content = { ScaleScreen() }
     )
+
     object SoundBarScreen : Screen(
         route = "sound_bar_screen",
         title = "Sound bar",
         content = { SoundbarScreen() }
     )
+
     object TimerScreen : Screen(
         route = "timer_screen",
         title = "Timer",
         content = { TimerScreen() }
     )
+
     object NavigationDrawerScreen : Screen(
         route = "navigation_drawer_screen",
         title = "Navigation Drawer",
         content = { NavigationDrawerScreen() }
     )
+
     object MotionLayoutScreen : Screen(
         route = "motion_layout_screen",
         title = "Motion Layout",
         content = { MotionLayoutScreen() }
+    )
+
+    object ClockScreen : Screen(
+        route = "clock_screen",
+        title = "Clock",
+        content = { ClockScreen() }
+    )
+
+    object ExpensesScreen : Screen(
+        route = "expenses_screen",
+        title = "Expenses",
+        content = { IncomeExpensesScreen() }
     )
 
     @Composable
