@@ -20,35 +20,38 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.jetpackcomposelearning.navigation.allScreens
+import com.example.jetpackcomposelearning.ui.theme.CustomMaterialTheme
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun MainScreen(navController: NavController) {
-    LazyVerticalGrid(
-        cells = GridCells.Adaptive(90.dp),
-        content = {
-            items(allScreens.size) { i ->
-                val screen = allScreens[i]
-                Box(
-                    modifier = Modifier
-                        .padding(8.dp)
-                        .aspectRatio(1f)
-                        .clip(RoundedCornerShape(5.dp))
-                        .background(Color.DarkGray)
-                        .clickable { navController.navigate(screen.route) },
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(
-                        text = screen.title,
-                        fontSize = 12.sp,
-                        color = Color.White,
-                        textAlign = TextAlign.Center,
+    CustomMaterialTheme {
+        LazyVerticalGrid(
+            cells = GridCells.Adaptive(90.dp),
+            content = {
+                items(allScreens.size) { i ->
+                    val screen = allScreens[i]
+                    Box(
                         modifier = Modifier
-                            .align(Alignment.Center)
-                            .padding(10.dp)
-                    )
+                            .padding(8.dp)
+                            .aspectRatio(1f)
+                            .clip(RoundedCornerShape(5.dp))
+                            .background(Color.DarkGray)
+                            .clickable { navController.navigate(screen.route) },
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            text = screen.title,
+                            fontSize = 12.sp,
+                            color = Color.White,
+                            textAlign = TextAlign.Center,
+                            modifier = Modifier
+                                .align(Alignment.Center)
+                                .padding(10.dp)
+                        )
+                    }
                 }
             }
-        }
-    )
+        )
+    }
 }

@@ -1,6 +1,7 @@
 package com.example.jetpackcomposelearning.navigation
 
 import androidx.compose.runtime.Composable
+import com.example.jetpackcomposelearning.averagesleep.AverageSleepScreen
 import com.example.jetpackcomposelearning.screens.animateddropdown.AnimatedDropdownScreen
 import com.example.jetpackcomposelearning.screens.bottomnavigation.BottomNavigationScreen
 import com.example.jetpackcomposelearning.screens.bottomsheet.BottomSheetScreen
@@ -15,6 +16,7 @@ import com.example.jetpackcomposelearning.screens.parallaxscrollview.ParallaxScr
 import com.example.jetpackcomposelearning.screens.scale.ScaleScreen
 import com.example.jetpackcomposelearning.screens.soundbar.SoundbarScreen
 import com.example.jetpackcomposelearning.screens.timer.TimerScreen
+import com.example.jetpackcomposelearning.ui.theme.CustomMaterialTheme
 
 val allScreens = listOf(
     Screen.InstagramScreen,
@@ -30,7 +32,8 @@ val allScreens = listOf(
     Screen.CustomPaginationScreen,
     Screen.NavigationDrawerScreen,
     Screen.MotionLayoutScreen,
-    Screen.ExpensesScreen
+    Screen.ExpensesScreen,
+    Screen.AverageSleepScreen
 )
 
 sealed class Screen(
@@ -125,11 +128,23 @@ sealed class Screen(
         title = "Clock",
         content = { ClockScreen() }
     )
-
     object ExpensesScreen : Screen(
         route = "expenses_screen",
-        title = "Expenses",
-        content = { IncomeExpensesScreen() }
+        title = "Income & Expenses",
+        content = {
+            CustomMaterialTheme {
+                IncomeExpensesScreen()
+            }
+        }
+    )
+    object AverageSleepScreen : Screen(
+        route = "average_sleep_screen",
+        title = "Average sleep screen",
+        content = {
+            CustomMaterialTheme {
+                AverageSleepScreen()
+            }
+        }
     )
 
     @Composable

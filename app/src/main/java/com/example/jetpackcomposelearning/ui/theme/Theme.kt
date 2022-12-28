@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 
 @Composable
-fun MeditationUIYouTubeTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
+fun CustomMaterialTheme(content: @Composable () -> Unit) {
     CompositionLocalProvider(LocalSpacing provides Spacing()) {
         MaterialTheme(
             typography = Typography,

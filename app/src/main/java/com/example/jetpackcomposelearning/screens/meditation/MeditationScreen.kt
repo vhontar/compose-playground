@@ -68,7 +68,7 @@ private val menuItems = listOf(
 
 @Composable
 fun MeditationScreen() {
-    MeditationUIYouTubeTheme {
+    CustomMaterialTheme {
         Box(
             modifier = Modifier
                 .background(DeepBlue)

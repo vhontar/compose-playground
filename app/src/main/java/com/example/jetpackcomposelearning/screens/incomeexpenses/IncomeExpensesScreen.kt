@@ -1,9 +1,6 @@
 package com.example.jetpackcomposelearning.screens.incomeexpenses
 
-import androidx.compose.animation.core.Animatable
-import androidx.compose.animation.core.AnimationVector1D
-import androidx.compose.animation.core.LinearEasing
-import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.*
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
@@ -78,37 +75,32 @@ fun IncomeExpensesScreen(
         )
     }
 
-    MaterialTheme(
-        typography = Typography,
-        shapes = Shapes
+    Column(
+        modifier = Modifier
+            .fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Column(
+        Box(
             modifier = Modifier
-                .fillMaxSize(),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
+                .fillMaxWidth()
+                .padding(MaterialTheme.spacing.medium),
+            contentAlignment = Alignment.Center
         ) {
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(MaterialTheme.spacing.medium),
-                contentAlignment = Alignment.Center
-            ) {
-                IncomeExpenseCircle(
-                    animateIncomeArc = animateIncomeArc,
-                    incomePercent = incomePercent,
-                    animateExpensesArc = animateExpensesArc
-                )
-                IncomeValue(
-                    animateIncomeAmount = animateIncomeAmount,
-                    modifier = Modifier.Companion
-                        .align(Alignment.Center)
-                        .padding(MaterialTheme.spacing.medium)
-                )
-            }
-            Spacer(modifier = Modifier.height(MaterialTheme.spacing.small))
-            ExpensesValue(animateExpensesAmount)
+            IncomeExpenseCircle(
+                animateIncomeArc = animateIncomeArc,
+                incomePercent = incomePercent,
+                animateExpensesArc = animateExpensesArc
+            )
+            IncomeValue(
+                animateIncomeAmount = animateIncomeAmount,
+                modifier = Modifier.Companion
+                    .align(Alignment.Center)
+                    .padding(MaterialTheme.spacing.medium)
+            )
         }
+        Spacer(modifier = Modifier.height(MaterialTheme.spacing.small))
+        ExpensesValue(animateExpensesAmount)
     }
 }
 
