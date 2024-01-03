@@ -1,4 +1,4 @@
-package com.example.jetpackcomposelearning.averagesleep
+package com.example.jetpackcomposelearning.screens.averagesleep
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background

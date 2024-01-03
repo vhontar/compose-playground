@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.launch
+import kotlin.math.absoluteValue
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -53,7 +54,7 @@ fun BottomSheetScreen() {
                     else sheetState.expand()
                 }
             }) {
-                Text(text = "Toggle sheet: ${sheetState.progress.fraction}")
+                Text(text = "Toggle sheet: ${sheetState.progress.absoluteValue}")
             }
         }
     }

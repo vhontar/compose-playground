@@ -6,8 +6,8 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.GridCells
-import androidx.compose.foundation.lazy.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -27,7 +27,7 @@ import com.example.jetpackcomposelearning.ui.theme.CustomMaterialTheme
 fun MainScreen(navController: NavController) {
     CustomMaterialTheme {
         LazyVerticalGrid(
-            cells = GridCells.Adaptive(90.dp),
+            columns = GridCells.Adaptive(90.dp),
             content = {
                 items(allScreens.size) { i ->
                     val screen = allScreens[i]
